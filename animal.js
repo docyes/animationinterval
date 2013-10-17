@@ -1,4 +1,4 @@
-var AnimationInterval = function(fn, interval, options) {
+var Anval = function(fn, interval, options) {
     options || (options = {});
     this.setInterval = !!options.setInterval
     if (!window.requestAnimationFrame || !window.cancelAnimationFrame || this.setInterval) {
@@ -17,7 +17,7 @@ var AnimationInterval = function(fn, interval, options) {
     };
     this.id = window.requestAnimationFrame(loop);
 };
-AnimationInterval.prototype.clear = function() {
+Anval.prototype.clear = function() {
     if (this.id) {
         if (window.cancelAnimationFrame && !this.setInterval) {
             window.cancelAnimationFrame(this.id)
