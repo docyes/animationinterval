@@ -14,4 +14,6 @@ var animationInterval = new Anval(
 
 ## constructor / initialize
 ### new Anval(fn, interval, [options])
-If {setInterval: true} is passed as an option
+Creates an internal timer using requestAnimationFrame calling function `fn` every `interval` ms.
+
+If {setInterval: true} is passed as an option will use setInterval over requestAnimationFrame.
