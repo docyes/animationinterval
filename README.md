@@ -1,4 +1,4 @@
-animation-interval
+Anval
 ==================
 
 setInterval a-la requestAnimationFrame
