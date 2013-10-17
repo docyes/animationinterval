@@ -11,3 +11,7 @@ var animationInterval = new Anval(
    1000
 );
 ```
+
+## constructor / initialize
+### new Anval(fn, interval, [options])
+If {setInterval: true} is passed as an option
