@@ -21,4 +21,4 @@ If {setInterval: true} is passed as an option will use setInterval over requestA
 ## clear()
 Stop the current internal timer and any subsequent `fn` calls.
 
-Note that calling `anval.clear()` on a non-started ticker is a no-op returning false.
+Note that calling `anval.clear()` on a non-started timer is a no-op returning false.
