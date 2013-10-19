@@ -14,7 +14,7 @@ var animationInterval = new AnimationInterval(
 
 ## constructor / initialize
 ### new AnimationInterval(fn, delay, [options])
-Calls a function after a specified delay. Creates an internal timer using requestAnimationFrame or setInterval calling function `fn` every `delay` ms.
+Calls a function `fn` after a specified delay. Creates an internal timer using requestAnimationFrame or setInterval.
 
 If {setInterval: true} is passed as an option will use setInterval over requestAnimationFrame.
 
