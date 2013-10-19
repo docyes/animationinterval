@@ -1,9 +1,9 @@
-var Anval = function(fn, interval, options) {
+var AnimationInterval = function(fn, delay, options) {
     options || (options = {});
     this.setInterval = !!options.setInterval;
     this.timeout = !!options.timeout;
     if (!window.requestAnimationFrame || !window.cancelAnimationFrame || this.setInterval) {
-        this.id = window.setInterval(fn, interval);
+        this.id = window.setInterval(fn, delay);
         return;
     }
     var start = new Date().getTime();
@@ -11,17 +11,17 @@ var Anval = function(fn, interval, options) {
         this.id = window.requestAnimationFrame(loop);
         var current = new Date().getTime(),
             delta = current - start;
-        if (delta >= interval) {
+        if (delta >= delay) {
             fn.call();
-            start = new Date().getTime();
             if (this.timeout) {
                 this.clear();
             }
+            start = new Date().getTime();
         }
     };
     this.id = window.requestAnimationFrame(loop);
 };
-Anval.prototype.clear = function() {
+AnimationInterval.prototype.clear = function() {
     if (this.id) {
         if (window.cancelAnimationFrame && !this.setInterval) {
             window.cancelAnimationFrame(this.id)
