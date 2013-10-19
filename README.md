@@ -1,7 +1,7 @@
 Animation Interval
 ==================
 
-setInterval a-la requestAnimationFrame
+setInterval/setTimeout a-la requestAnimationFrame
 
 ```js
 var animationInterval = new AnimationInterval(
