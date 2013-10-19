@@ -1,6 +1,7 @@
 var Anval = function(fn, interval, options) {
     options || (options = {});
-    this.setInterval = !!options.setInterval
+    this.setInterval = !!options.setInterval;
+    this.timeout = !!options.timeout;
     if (!window.requestAnimationFrame || !window.cancelAnimationFrame || this.setInterval) {
         this.id = window.setInterval(fn, interval);
         return;
@@ -13,6 +14,9 @@ var Anval = function(fn, interval, options) {
         if (delta >= interval) {
             fn.call();
             start = new Date().getTime();
+            if (this.timeout) {
+                this.clear();
+            }
         }
     };
     this.id = window.requestAnimationFrame(loop);
